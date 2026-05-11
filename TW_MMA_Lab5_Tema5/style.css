@@ -1,0 +1,9 @@
+:root { scroll-behavior: smooth; }
+
+#hero .ratio {
+    background-image: linear-gradient(135deg, #e9ecef, #f8f9fa);
+}
+
+[data-bs-theme="dark"] #hero .ratio {
+    background-image: linear-gradient(135deg, #1f2937, #0b1220);
+}

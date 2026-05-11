@@ -1,0 +1,259 @@
+:root { scroll-behavior: smooth; }
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    margin: 0;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===== Skip link ===== */
+.skip {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: .5rem;
+    display: inline-block;
+    background: #111;
+    color: #fff;
+}
+
+/* ===== Header & nav with distinct link states ===== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: #0a66c2;
+    color: #fff;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.topnav {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    padding: .75rem 1rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding: .4rem .8rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.15s ease;
+}
+
+.topnav a:link,
+.topnav a:visited {
+    color: #ffffff;
+}
+
+.topnav a:hover {
+    background: rgba(255, 255, 255, .18);
+    text-decoration: underline;
+}
+
+.topnav a:active {
+    background: rgba(255, 255, 255, .35);
+    color: #ffeb91;
+}
+
+.topnav a:focus-visible {
+    outline: 3px solid #ffeb91;
+    outline-offset: 2px;
+}
+
+/* ===== Main + sections ===== */
+.container {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    scroll-margin-top: 80px;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section:target {
+    background: #fffbe6;
+    outline: 2px dashed #f59e0b;
+    outline-offset: -8px;
+    border-radius: 6px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+h1, h2 {
+    scroll-margin-top: 80px;
+}
+
+/* ===== Form ===== */
+form fieldset {
+    border: 1px solid #cdd3da;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+
+form legend {
+    font-weight: 600;
+    color: #0a66c2;
+    padding: 0 .5rem;
+}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.label,
+label {
+    font-weight: 600;
+}
+
+.label {
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.field label {
+    display: block;
+    margin-bottom: .25rem;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: .6rem .75rem;
+    border: 1px solid #cdd3da;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus {
+    border-color: #0a66c2;
+    box-shadow: 0 0 0 3px rgba(10, 102, 194, .18);
+}
+
+.rowish {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.rowish label {
+    cursor: pointer;
+}
+
+.terms {
+    display: block;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: .75rem;
+    margin-top: .5rem;
+}
+
+button {
+    padding: .65rem 1.4rem;
+    border: 0;
+    border-radius: 8px;
+    background: #0a66c2;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.15s ease;
+}
+
+button:hover {
+    background: #084a8e;
+}
+
+button.secondary {
+    background: #64748b;
+}
+
+button.secondary:hover {
+    background: #475569;
+}
+
+button:focus-visible {
+    outline: 3px solid #ffeb91;
+    outline-offset: 2px;
+}
+
+.hint {
+    display: block;
+    color: #5b6570;
+    margin-top: .25rem;
+    font-size: .85rem;
+}
+
+/* ===== Built-in validation styling (no JS) ===== */
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #b00020;
+    background: #fff5f6;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-color: #136f2b;
+    background: #f3f9f5;
+}
+
+input:invalid:not(:placeholder-shown):not(:focus) ~ .hint {
+    color: #b00020;
+    font-weight: 600;
+}
+
+input:valid:not(:placeholder-shown) ~ .hint {
+    color: #136f2b;
+}
+
+/* ===== Callouts ===== */
+.callouts {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    background: #f0f7ff;
+    border-left: 4px solid #0a66c2;
+    border-radius: 6px;
+}
+
+.callouts code {
+    background: #ffffff;
+    padding: .1rem .35rem;
+    border-radius: 3px;
+    font-size: .9em;
+    border: 1px solid #cdd3da;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    padding: 1rem;
+    text-align: center;
+    background: #f7f7f9;
+    margin-top: 2rem;
+    color: #6b7280;
+}

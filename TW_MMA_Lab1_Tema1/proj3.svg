@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#26a69a"/>
+  <text x="60" y="60" font-family="monospace" font-size="14" fill="#ffffff">{</text>
+  <text x="80" y="85" font-family="monospace" font-size="12" fill="#ffeb91">"api":</text>
+  <text x="135" y="85" font-family="monospace" font-size="12" fill="#ffffff">"REST"</text>
+  <text x="80" y="110" font-family="monospace" font-size="12" fill="#ffeb91">"data":</text>
+  <text x="140" y="110" font-family="monospace" font-size="12" fill="#ffffff">[...]</text>
+  <text x="60" y="135" font-family="monospace" font-size="14" fill="#ffffff">}</text>
+  <text x="150" y="180" font-family="Arial" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">REST API Integration</text>
+</svg>

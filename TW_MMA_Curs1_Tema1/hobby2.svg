@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130">
+  <rect width="200" height="130" fill="#1e1e2e"/>
+  <text x="20" y="35" font-family="monospace" font-size="11" fill="#7dd3fc">function</text>
+  <text x="80" y="35" font-family="monospace" font-size="11" fill="#fde68a">code() {</text>
+  <text x="35" y="55" font-family="monospace" font-size="11" fill="#a7f3d0">return</text>
+  <text x="80" y="55" font-family="monospace" font-size="11" fill="#fda4af">"💡";</text>
+  <text x="20" y="75" font-family="monospace" font-size="11" fill="#fde68a">}</text>
+  <text x="20" y="105" font-family="monospace" font-size="11" fill="#94a3b8">// open source</text>
+</svg>

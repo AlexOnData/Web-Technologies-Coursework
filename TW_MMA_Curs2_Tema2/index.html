@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangles - Hausaufgabe 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <header>
+            <h1>🔺 Triangle Analyzer</h1>
+            <p class="subtitle">Read three positive numbers <strong>a</strong>, <strong>b</strong>, <strong>c</strong> and check if they form a triangle, whether it's right-angled, and compute its area using Heron's formula.</p>
+        </header>
+
+        <form id="triangle-form" novalidate>
+            <div class="grid">
+                <div class="field">
+                    <label for="a">Side a</label>
+                    <input id="a" type="number" min="0" step="any" placeholder="3" required>
+                </div>
+                <div class="field">
+                    <label for="b">Side b</label>
+                    <input id="b" type="number" min="0" step="any" placeholder="4" required>
+                </div>
+                <div class="field">
+                    <label for="c">Side c</label>
+                    <input id="c" type="number" min="0" step="any" placeholder="5" required>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn-primary">Analyze</button>
+                <button type="button" id="prompt-btn" class="btn-secondary">Use prompt() instead</button>
+                <button type="reset" class="btn-ghost">Reset</button>
+            </div>
+        </form>
+
+        <section id="result" class="result">
+            <p class="placeholder">Enter three sides and press <em>Analyze</em>.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

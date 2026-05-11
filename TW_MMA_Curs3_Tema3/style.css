@@ -1,0 +1,153 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui, Arial, sans-serif;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: #1a202c;
+}
+
+.card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem 2.2rem;
+    border-radius: 14px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+}
+
+header h1 {
+    margin: 0 0 0.4rem;
+    color: #0a3d33;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #0a3d33;
+}
+
+input[type="number"] {
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #cbe8d8;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: #11998e;
+    box-shadow: 0 0 0 3px rgba(17, 153, 142, 0.18);
+}
+
+.actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.4rem;
+}
+
+button {
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.05s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: #0a3d33;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #062a23;
+    box-shadow: 0 4px 10px rgba(10, 61, 51, 0.3);
+}
+
+.btn-ghost {
+    background: #e2e8f0;
+    color: #2d3748;
+}
+
+.btn-ghost:hover {
+    background: #cbd5e0;
+}
+
+.status {
+    margin: 0 0 0.8rem;
+    color: #0a3d33;
+    font-weight: 500;
+    min-height: 1.2rem;
+}
+
+.status.error {
+    color: #c53030;
+}
+
+.table-output {
+    overflow-x: auto;
+}
+
+table.generated {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    background: #f7fafc;
+}
+
+table.generated th,
+table.generated td {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #cbe8d8;
+    text-align: center;
+    min-width: 60px;
+}
+
+table.generated thead th {
+    background: #11998e;
+    color: white;
+    font-weight: 600;
+}
+
+table.generated tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+table.generated tbody tr:hover {
+    background: #d4f5e2;
+}
+
+@media (max-width: 540px) {
+    .grid { grid-template-columns: 1fr; }
+}

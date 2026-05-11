@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#f5b800"/>
+  <circle cx="80" cy="105" r="28" fill="#1e3c72"/>
+  <path d="M 50 165 Q 80 135 110 165 Z" fill="#1e3c72"/>
+  <circle cx="150" cy="100" r="32" fill="#7952b3"/>
+  <path d="M 116 165 Q 150 130 184 165 Z" fill="#7952b3"/>
+  <circle cx="220" cy="105" r="28" fill="#26a69a"/>
+  <path d="M 190 165 Q 220 135 250 165 Z" fill="#26a69a"/>
+  <text x="150" y="195" font-family="Arial" font-size="11" font-weight="bold" fill="#1e3c72" text-anchor="middle">Echipa de Hackathon</text>
+</svg>

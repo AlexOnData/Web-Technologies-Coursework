@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Christmas Show Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>🎄 Christmas Show Explorer 🎁</h1>
+        <p>Search Christmas-themed TV shows using the TVMaze API.</p>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <form id="search-form" autocomplete="off">
+                <label for="search-input" class="visually-hidden">Search shows:</label>
+                <input type="text" id="search-input" placeholder="e.g. christmas, santa, snow">
+                <button type="submit" id="search-button">🔍 Search</button>
+                <button type="button" id="festive-button">❄️ Feeling Festive</button>
+            </form>
+        </section>
+
+        <section class="status-section">
+            <div id="loading" class="hidden">
+                <span class="spinner"></span> Loading...
+            </div>
+            <div id="error" class="error-message"></div>
+        </section>
+
+        <section class="results-section">
+            <h2 id="results-heading">Results</h2>
+            <div id="results" class="show-grid">
+                <!-- Show cards will be rendered here -->
+            </div>
+        </section>
+
+        <section id="details-section" class="details-section hidden">
+            <div class="details-header">
+                <h2>Show Details</h2>
+                <button type="button" id="close-details" class="close-details">✕ Close details</button>
+            </div>
+            <div id="details" class="show-details">
+                <!-- Selected show details will be rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>🎅 Christmas Show Explorer &copy; 2025 &middot; AlexOnData &middot; powered by <a href="https://www.tvmaze.com" target="_blank" rel="noopener">TVMaze</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

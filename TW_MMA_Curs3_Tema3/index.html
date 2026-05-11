@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Tabel - Curs 3 Tema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="card">
+        <header>
+            <h1>📊 Generator de tabel</h1>
+            <p class="subtitle">
+                Introduceți numărul de linii și de coloane, iar la apăsarea butonului
+                <em>Submit</em>, va apărea un tabel cu dimensiunile indicate.
+            </p>
+        </header>
+
+        <form id="table-form">
+            <div class="grid">
+                <div class="field">
+                    <label for="rows">Număr de linii</label>
+                    <input id="rows" type="number" min="1" max="50" value="3" required>
+                </div>
+                <div class="field">
+                    <label for="cols">Număr de coloane</label>
+                    <input id="cols" type="number" min="1" max="20" value="4" required>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn-primary">Submit</button>
+                <button type="reset" class="btn-ghost" id="reset-btn">Reset</button>
+            </div>
+        </form>
+
+        <p id="status" class="status"></p>
+        <div id="table-output" class="table-output"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

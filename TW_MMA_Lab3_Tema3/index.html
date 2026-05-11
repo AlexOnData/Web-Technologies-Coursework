@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LAB 3 — Anchors &amp; Forms (No external JS) — Solution</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="topnav" aria-label="Main">
+      <a href="#section1">Section 1</a>
+      <a href="#section2">Section 2</a>
+      <a href="#section3">Section 3</a>
+      <a href="about.html">About</a>
+      <a href="https://www.w3.org/TR/html52/" target="_blank" rel="noopener">HTML Spec</a>
+    </nav>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Anchors &amp; Forms — No External JavaScript</h1>
+    <p>This page uses only HTML and CSS — no JavaScript. Validation is handled
+       by the browser through <code>required</code>, <code>minlength</code>,
+       <code>pattern</code>, and <code>title</code> attributes, while CSS
+       provides feedback through the <code>:valid</code> and <code>:invalid</code>
+       pseudo-classes.</p>
+
+    <section id="section1" class="section">
+      <h2>Section 1</h2>
+      <p>Content for section 1. <a href="#section3">Jump to Section 3</a></p>
+    </section>
+
+    <section id="section2" class="section">
+      <h2>Section 2</h2>
+      <p>More content here. <a href="#section1">Back to Section 1</a></p>
+    </section>
+
+    <section id="section3" class="section">
+      <h2>Section 3</h2>
+      <p>Last section. <a href="#top">Back to top</a></p>
+    </section>
+
+    <hr />
+
+    <h2>Signup Form (HTML &amp; CSS only)</h2>
+
+    <form id="demoForm" novalidate>
+      <fieldset>
+        <legend>Account details</legend>
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text"
+                 placeholder="e.g. Ana Popescu"
+                 required minlength="3" maxlength="60"
+                 pattern="[A-Za-zĂÂÎȘȚăâîșț\s\-]+"
+                 title="Only letters, spaces and hyphens; at least 3 characters.">
+          <small class="hint">At least 3 characters; letters, spaces, hyphens.</small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email"
+                 placeholder="e.g. name@unitbv.ro"
+                 required
+                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                 title="Enter a valid email address (e.g. name@unitbv.ro).">
+          <small class="hint">A valid email address is required.</small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password"
+                 required minlength="8"
+                 pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
+                 title="At least 8 characters, including letters and at least one digit.">
+          <small class="hint">Min 8 characters, must contain letters and at least one digit.</small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Plan</legend>
+        <div class="rowish" role="radiogroup" aria-label="Plan">
+          <label><input type="radio" name="plan" value="basic" required> Basic</label>
+          <label><input type="radio" name="plan" value="pro"> Pro</label>
+          <label><input type="radio" name="plan" value="enterprise"> Enterprise</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Add-ons</legend>
+        <div class="rowish">
+          <label><input type="checkbox" name="addons" value="reports"> Reports</label>
+          <label><input type="checkbox" name="addons" value="support"> Support</label>
+          <label><input type="checkbox" name="addons" value="backup"> Backup</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Terms</legend>
+        <label class="terms">
+          <input type="checkbox" name="terms" required>
+          I accept the <a href="about.html">terms &amp; conditions</a>.
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit">Submit</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+    </form>
+
+    <div class="callouts">
+      <p><strong>Tip:</strong> Validation states are styled with
+         <code>:invalid</code> and <code>:valid</code>. The
+         <code>required</code>, <code>minlength</code>, <code>pattern</code>,
+         and <code>title</code> attributes drive the browser's built-in messages.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; WT Lab 3 &middot; AlexOnData</p>
+  </footer>
+</body>
+</html>

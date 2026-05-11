@@ -1,0 +1,16 @@
+# macOS metadata (from the original starter zips)
+.DS_Store
+**/__MACOSX/
+**/._*
+
+# Editor settings
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+node_modules/
+
+# OS
+Thumbs.db
+desktop.ini

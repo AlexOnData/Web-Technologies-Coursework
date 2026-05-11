@@ -1,0 +1,331 @@
+/* ============================================
+   Lab 2 - Student Survey micro-site
+   Anchors, styled links, static survey form
+   ============================================ */
+
+:root {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    color: #1a202c;
+    background-color: #f5f7fa;
+    line-height: 1.6;
+}
+
+/* ===== Skip link (accessibility) ===== */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #0a3d62;
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background-color: #0a3d62;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+/* ===== Site nav (distinct link states) ===== */
+.site-nav {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, outline-offset 0.1s;
+    font-weight: 500;
+}
+
+.site-nav a:link,
+.site-nav a:visited {
+    color: #ffffff;
+}
+
+.site-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    text-decoration: underline;
+}
+
+.site-nav a:active {
+    background-color: rgba(255, 255, 255, 0.32);
+}
+
+.site-nav a.active {
+    background-color: #f5b800;
+    color: #0a3d62;
+}
+
+.site-nav a:focus-visible {
+    outline: 3px solid #f5b800;
+    outline-offset: 2px;
+}
+
+/* ===== Main + sections ===== */
+.container {
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 0 1.2rem;
+}
+
+.section,
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 1.8rem 1.6rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    scroll-margin-top: 80px;
+}
+
+.section h2,
+.faq-item h2 {
+    color: #0a3d62;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #f5b800;
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+
+/* ===== Table of contents ===== */
+.toc {
+    background-color: #fffbe6;
+    border-left: 4px solid #f5b800;
+    padding: 1rem 1.4rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.toc h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #6b4d00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.toc li {
+    margin-bottom: 0.3rem;
+}
+
+/* ===== Distinct link states (general) ===== */
+a:link {
+    color: #0a3d62;
+}
+
+a:visited {
+    color: #2a4d70;
+}
+
+a:hover {
+    color: #f5b800;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #b9650b;
+}
+
+a:focus-visible {
+    outline: 2px solid #f5b800;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ===== Form ===== */
+.survey-form fieldset {
+    border: 1px solid #d6dce4;
+    border-radius: 8px;
+    padding: 1rem 1.2rem 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.survey-form legend {
+    font-weight: 600;
+    color: #0a3d62;
+    padding: 0 0.5rem;
+}
+
+.field {
+    margin-bottom: 0.9rem;
+}
+
+.field label,
+.rowish > label {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #ffffff;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: 2px solid #f5b800;
+    outline-offset: 1px;
+    border-color: #0a3d62;
+}
+
+/* ===== Radio/checkbox row ===== */
+.rowish {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.rowish label {
+    cursor: pointer;
+}
+
+.rowish input[type="radio"],
+.rowish input[type="checkbox"] {
+    margin-right: 0.4rem;
+}
+
+/* ===== Action buttons ===== */
+.actions {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.actions button,
+.actions .link-button {
+    padding: 0.65rem 1.4rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #0a3d62;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.15s ease;
+}
+
+.actions button:hover,
+.actions .link-button:hover {
+    background-color: #082c47;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.actions button.secondary {
+    background-color: #6c757d;
+}
+
+.actions button.secondary:hover {
+    background-color: #535a60;
+}
+
+.actions .link-button {
+    background-color: #f5b800;
+    color: #0a3d62;
+}
+
+.actions .link-button:hover {
+    background-color: #d49e00;
+    color: #0a3d62;
+}
+
+/* ===== Resources list ===== */
+.resources-list {
+    list-style: square;
+    padding-left: 1.5rem;
+}
+
+.resources-list li {
+    padding: 0.3rem 0;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background-color: #0a3d62;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-nav {
+        width: 100%;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

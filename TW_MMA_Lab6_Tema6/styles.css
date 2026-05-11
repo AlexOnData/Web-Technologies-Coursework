@@ -1,0 +1,44 @@
+.swatch {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s ease, outline-offset 0.1s ease;
+}
+
+.swatch:hover {
+    outline: 2px dashed rgba(0, 0, 0, 0.25);
+    outline-offset: 2px;
+    transform: translateY(-2px);
+}
+
+.swatch::after {
+    content: attr(data-hex);
+    position: absolute;
+    bottom: -1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.7rem;
+    color: #444;
+    white-space: nowrap;
+}
+
+#swatches {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+}
+
+.swatch.copied::before {
+    content: "Copied!";
+    position: absolute;
+    top: -1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: #136f2b;
+    font-weight: 600;
+}

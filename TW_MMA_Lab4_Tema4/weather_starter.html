@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Message Generator - Lab 4</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2rem 2.5rem;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            max-width: 460px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        .form-row {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #2d3748;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 0.65rem 0.85rem;
+            font-size: 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #6c5ce7;
+            outline-offset: 1px;
+            border-color: #6c5ce7;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        button:hover {
+            background: #5346c4;
+        }
+
+        #msg {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: center;
+            min-height: 3rem;
+            transition: color 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h2>Weather Message Generator</h2>
+
+        <div class="form-row">
+            <label for="username">Your name (optional)</label>
+            <input id="username" type="text" placeholder="e.g. Alex">
+        </div>
+
+        <div class="form-row">
+            <label for="weather">Weather today</label>
+            <select id="weather">
+                <option>Sunny</option>
+                <option>Rainy</option>
+                <option>Snowy</option>
+                <option>Windy</option>
+                <option>Cloudy</option>
+            </select>
+        </div>
+
+        <button onclick="showMessage()">Get Message</button>
+
+        <p id="msg"></p>
+    </main>
+
+    <script>
+        function showMessage() {
+            const weather = document.getElementById("weather").value;
+            const nameValue = document.getElementById("username").value.trim();
+            const msgEl = document.getElementById("msg");
+
+            let message;
+            let color;
+
+            if (weather === "Sunny") {
+                message = "☀️ Perfect day for a walk!";
+                color = "#f39c12";
+            } else if (weather === "Rainy") {
+                message = "🌧️ Don't forget your umbrella!";
+                color = "#3498db";
+            } else if (weather === "Snowy") {
+                message = "❄️ Stay warm and drive carefully!";
+                color = "#7f8c8d";
+            } else if (weather === "Windy") {
+                message = "🌬️ Hold onto your hat — it's breezy out there!";
+                color = "#27ae60";
+            } else if (weather === "Cloudy") {
+                message = "☁️ A nice gray day — good for indoor coding!";
+                color = "#636e72";
+            } else {
+                message = "Pick a weather option to see a message.";
+                color = "#2d3748";
+            }
+
+            if (nameValue) {
+                message = nameValue + ", " + message;
+            }
+
+            msgEl.innerText = message;
+            msgEl.style.color = color;
+        }
+    </script>
+</body>
+</html>

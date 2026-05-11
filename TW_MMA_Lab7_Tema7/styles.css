@@ -1,0 +1,34 @@
+.product-card {
+    border-radius: var(--radius, 12px);
+    overflow: hidden;
+}
+
+.product-card .card-body {
+    border-top: 3px solid var(--accent, #0d6efd);
+}
+
+.product-accent {
+    background: var(--accent, #0d6efd);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.product-img {
+    aspect-ratio: 1.6 / 1;
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: var(--radius, 12px);
+    border-top-right-radius: var(--radius, 12px);
+    display: block;
+}
+
+.product-card .card-actions {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    flex-wrap: wrap;
+}
